@@ -28,13 +28,13 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-        new IonicNative.Camera().getPicture()
-          .then(res => console.log('Took a picture', res))
-          .catch(e => console.log('Error taking a picture', e));
+      IonicNative.Camera.getPicture()
+        .then(res => console.log('Took a picture', res))
+    .catch(e => console.log('Error taking a picture', e));
 
-        new IonicNative.Geolocation().getLocation()
-          .then(res => console.log('Got location', res))
-          .catch(e => console.log('Error getting location', e));
+      IonicNative.Geolocation.getCurrentPosition()
+        .then(res => console.log('Got location', res))
+    .catch(e => console.log('Error getting location', e));
     },
 
     // Update DOM on a Received Event
